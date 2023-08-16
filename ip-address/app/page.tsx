@@ -12,8 +12,19 @@ export default function Home() {
 
     setIpDetails(res)
   }
-  const [ipDetails, setIpDetails] = useState<IpInformation>({} as IpInformation)
+  const [ipDetails, setIpDetails] = useState<IpInformation>({
+    ip: '192.212.174.101',
+    location: {
+      city: 'Brooklyn',
+      region: 'NY',
+      timezone: '-05:00',
+      lat: 40.666471,
+      lng: -73.904829
+    },
+    isp: 'SpaceX Starlink'
+  } as IpInformation)
   const [ip, setIp] = useState<string>('')
+
   return (
     <main className="min-h-screen relative max-w-[1440px] min-w-[375px] w-full">
       <div className="p-2 w-full flex flex-col items-center pb-32 relative" style={{ backgroundImage: `url(/images/pattern-bg-desktop.png)` }}>
@@ -33,13 +44,13 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="absolute bottom-[-40px] z-10">
+        <div className="absolute z-10 bottom-[-23%] m-w-[1280px]">
           <IpDetails details={ipDetails} />
         </div>
       </div>
 
       <div className="relative z-0">
-        <Map />
+        <Map details={ipDetails} />
       </div>
 
     </main>
