@@ -14,7 +14,8 @@ export interface IpInformation {
 
 export default async function getIp(ip:string) {
   try {
-    const res = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_IPZVXvDXjfJV8sJvaAK19HAassd9S&ipAddress=${ip}`)
+    const api_key = process.env.NEXT_PUBLIC_IPFY_API_KEY
+    const res = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${api_key}&ipAddress=${ip}`)
     const data = await res.json()
 
     if (!res.ok) {
