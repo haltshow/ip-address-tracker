@@ -2,7 +2,7 @@
 
 Essa é uma solução para o desafio Ip Address Tracker do Frontend MentorIO.
 
-Projeto publicado: https://ip-address-api-seven-tau.vercel.app/
+Projeto publicado: https://ip-address-tracker-haltshow.vercel.app/
 
 ## Sumário
 
